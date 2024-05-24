@@ -1,0 +1,64 @@
+* {box-sizing: border-box;}
+
+body{
+    height: 100vh;
+    background-image: linear-gradient(to top right, #6ABBD5, #2993CF, #4D67C5, #652CDE);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+}
+
+#register-container{
+    background-color: rgba(225, 225, 225, 50%);
+    /* background-color: white; */
+
+    margin: auto;
+    margin-top: 7vh;
+    padding-top: 1%;
+    width: 27.5%;
+    height: 85vh;
+
+    border: none;
+    border-radius: 1em;
+}
+
+#header{
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+input{
+    width: 80%;
+    height: 8%;
+    display: block;
+    margin: auto;
+    margin-top: 4%;
+    padding-left: 3%;
+
+    border: none;
+    border-radius: 1em;
+    outline: none;
+}
+
+input::placeholder{
+    color: rgba(0, 0, 0, 30%);
+}
+
+#sbmt-btn{
+    display: block;
+    margin: auto;
+    margin-top: 13%;
+    width: 80%;
+    height: 8%;
+
+    border: none;
+    border-radius: 2em;
+
+    background-color: #4B6EEB;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#sbmt-btn:hover{
+    background-color: #375AD7;
+}
