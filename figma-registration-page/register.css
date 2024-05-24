@@ -22,8 +22,9 @@ body{
     margin: auto;
     margin-top: 7vh;
     padding-top: 1%;
-    width: 27.5%;
     height: 85vh;
+    
+    width: min(calc(100vw - 50px), 343px);
 
     border: none;
     border-radius: 1em;
