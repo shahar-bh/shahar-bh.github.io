@@ -9,3 +9,9 @@ h1{
     color: red;
     text-align: center;
 }
+
+body{
+    height: 100dvh;
+    padding-top: 30px;
+    overflow: hidden;
+}
