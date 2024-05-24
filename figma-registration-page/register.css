@@ -7,7 +7,7 @@
 
 #header{
     text-align: center;
-    margin-bottom: 10%;
+    margin-bottom: 30px;
 }
 
 body{
@@ -17,22 +17,20 @@ body{
 
 #register-container{
     background-color: rgba(225, 225, 225, 50%);
-    /* background-color: white; */
 
+    width: min(calc(100vw - 50px), 343px);
     margin: auto;
     margin-top: 7vh;
-    padding-top: 1%;
-    height: 85vh;
+    padding-top: 10px;
+    padding-bottom: 25px;
     
-    width: min(calc(100vw - 50px), 343px);
-
     border: none;
     border-radius: 1em;
 }
 
 input{
     width: 80%;
-    height: 8%;
+    padding: 10px;
     display: block;
     margin: auto;
     margin-top: 4%;
@@ -50,9 +48,9 @@ input::placeholder{
 #sbmt-btn{
     display: block;
     margin: auto;
-    margin-top: 13%;
+    margin-top: 40px;
     width: 80%;
-    height: 8%;
+    padding: 10px;
 
     border: none;
     border-radius: 2em;
