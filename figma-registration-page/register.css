@@ -11,30 +11,31 @@
 }
 
 body{
-    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    padding-top: 40px;
     background-image: linear-gradient(to top right, #6ABBD5, #2993CF, #4D67C5, #652CDE);
 }
 
 #register-container{
     background-color: rgba(225, 225, 225, 50%);
-
     width: min(calc(100vw - 50px), 343px);
+    
     margin: auto;
-    margin-top: 7vh;
     padding-top: 10px;
     padding-bottom: 25px;
+    padding-inline: 35px;
     
     border: none;
     border-radius: 1em;
 }
 
 input{
-    width: 80%;
-    padding: 10px;
+    width: 100%;
     display: block;
     margin: auto;
-    margin-top: 4%;
-    padding-left: 3%;
+    margin-top: 15px;
+    padding: 10px;
 
     border: none;
     border-radius: 1em;
@@ -47,9 +48,9 @@ input::placeholder{
 
 #sbmt-btn{
     display: block;
+    width: 100%;
     margin: auto;
     margin-top: 40px;
-    width: 80%;
     padding: 10px;
 
     border: none;
