@@ -49,11 +49,20 @@ table{
 
         border: 1px solid black;
         border-radius: 10%;
+
+        cursor: pointer;
     }
 
         th .first-color{
-            background-color: #73003E;
+            background-image: -webkit-repeating-linear-gradient(top, #73003E, #8F0078);
         }
         th .second-color{
-            background-color: #8F0078;
+            background-image: -webkit-repeating-linear-gradient(bottom, #73003E, #8F0078);
+        }
+        
+        th .first-color:hover{
+            background-image: -webkit-repeating-linear-gradient(top, #690034, #7B0064)
+        }
+        th .second-color:hover{
+            background-image: -webkit-repeating-linear-gradient(bottom, #690034, #7B0064)
         }
