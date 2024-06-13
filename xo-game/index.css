@@ -52,61 +52,69 @@ table{
         cursor: pointer;
     }
 
-        #top #left{
+        #topLeft{
             background-image: -webkit-repeating-linear-gradient(top left,  #73003E, #73003E 25%, #8F0078);
         }
-            #top #left:hover{
+            #topLeft:hover{
                 background-image: -webkit-repeating-linear-gradient(top left,  #690034, #690034 25%, #7B0064);
             }
-        #top #middle{
+        #topMiddle{
             background-image: -webkit-repeating-linear-gradient(top, #73003E, #8F0078 75%, #8F0078);
         }
-            #top #middle:hover{
+            #topMiddle:hover{
                 background-image: -webkit-repeating-linear-gradient(top, #690034, #7B0064 75%, #7B0064);
             }
-        #top #right{
+        #topRight{
             background-image: -webkit-repeating-linear-gradient(top right,  #73003E, #73003E 25%, #8F0078);
         }
-            #top #right:hover{
+            #topRight:hover{
                 background-image: -webkit-repeating-linear-gradient(top right,  #690034, #690034 25%, #7B0064);
             }
 
 
-        #middle #left{
+        #middleLeft{
             background-image: -webkit-repeating-linear-gradient(left, #73003E, #8F0078 75%, #8F0078);
         }
-            #middle #left:hover{
+            #middleLeft:hover{
                 background-image: -webkit-repeating-linear-gradient(left, #690034, #7B0064 75%, #7B0064);
             }
-        #middle #middle{
+        #middleMiddle{
             background-color: #8F0078;
         }
-            #middle #middle:hover{
+            #middleMiddle:hover{
                 background-color: #7B0064;
             }
-        #middle #right{
+        #middleRight{
             background-image: -webkit-repeating-linear-gradient(right, #73003E, #8F0078 75%, #8F0078);
         }
-            #middle #right:hover{
+            #middleRight:hover{
                 background-image: -webkit-repeating-linear-gradient(right, #690034, #7B0064 75%, #7B0064);
             }
             
             
-        #bottom #left{
+        #bottomLeft{
             background-image: -webkit-repeating-linear-gradient(bottom left,  #73003E, #73003E 25%, #8F0078);
         }
-            #bottom #left:hover{
+            #bottomLeft:hover{
                 background-image: -webkit-repeating-linear-gradient(bottom left,  #690034, #690034 25%, #7B0064);
             }
-        #bottom #middle{
+        #bottomMiddle{
             background-image: -webkit-repeating-linear-gradient(bottom, #73003E, #8F0078 75%, #8F0078);
         }
-            #bottom #middle:hover{
+            #bottomMiddle:hover{
                 background-image: -webkit-repeating-linear-gradient(bottom, #690034, #7B0064 75%, #7B0064);
             }
-        #bottom #right{
+        #bottomRight{
             background-image: -webkit-repeating-linear-gradient(bottom right,  #73003E, #73003E 25%, #8F0078);
         }
-            #bottom #right:hover{
+            #bottomRight:hover{
                 background-image: -webkit-repeating-linear-gradient(bottom right,  #690034, #690034 25%, #7B0064);
             }
+
+#turnP{
+    text-align: center;
+    color: white;
+    font-size: larger;
+
+    margin-top: 10px;
+}

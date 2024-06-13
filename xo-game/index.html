@@ -13,23 +13,24 @@
     <h1> <span id="X">X</span> <span id="and">&</span> <span id="O">O</span> </h1>
 
     <table>
-        <tr id="top">
-            <th><button id="left"></button></th>
-            <th><button id="middle"></button></th>
-            <th><button id="right"></button></th>
+        <tr>
+            <th><button id="topLeft" onclick="whosTurn('topLeft')"></button></th>
+            <th><button id="topMiddle" onclick="whosTurn('topMiddle')"></button></th>
+            <th><button id="topRight" onclick="whosTurn('topRight')"></button></th>
         </tr>
 
-        <tr id="middle">
-            <th><button id="left"></button></th>
-            <th><button id="middle"></button></th>
-            <th><button id="right"></button></th>
+        <tr>
+            <th><button id="middleLeft" onclick="whosTurn('middleLeft')"></button></th>
+            <th><button id="middleMiddle" onclick="whosTurn('middleMiddle')"></button></th>
+            <th><button id="middleRight" onclick="whosTurn('middleRight')"></button></th>
         </tr>
 
-        <tr id="bottom">
-            <th><button id="left"></button></th>
-            <th><button id="middle"></button></th>
-            <th><button id="right"></button></th>
+        <tr>
+            <th><button id="bottomLeft" onclick="whosTurn('bottomLeft')"></button></th>
+            <th><button id="bottomMiddle" onclick="whosTurn('bottomMiddle')"></button></th>
+            <th><button id="bottomRight" onclick="whosTurn('bottomRight')"></button></th>
         </tr>
     </table>
+    <p id="turnP">It's X's turn!</p>
 </body>
 </html>
