@@ -8,7 +8,7 @@ function whosTurn(btnID)
     button.innerHTML = curPlayer;
 
     const par = document.getElementById("turnP");
-    if (!didWin){
+    if (!didWin()){
         // change the turns
         if (curPlayer === 'X') curPlayer = 'O';
         else curPlayer = 'X';
@@ -27,31 +27,31 @@ function whosTurn(btnID)
 
 function didWin()
 {
-    const topLeft = document.getElementById("topLeft").innerHTML;
-    const topMiddle = document.getElementById("topMiddle").innerHTML;
-    const topRight = document.getElementById("topRight").innerHTML;
+    const topLeft = document.getElementById("topLeft");
+    const topMiddle = document.getElementById("topMiddle");
+    const topRight = document.getElementById("topRight");
 
-    const middleLeft = document.getElementById("middleLeft").innerHTML;
-    const middleMiddle = document.getElementById("middleMiddle").innerHTML;
-    const middleRight = document.getElementById("middleRight").innerHTML;
+    const middleLeft = document.getElementById("middleLeft");
+    const middleMiddle = document.getElementById("middleMiddle");
+    const middleRight = document.getElementById("middleRight");
 
-    const bottomLeft = document.getElementById("bottomLeft").innerHTML;
-    const bottomMiddle = document.getElementById("bottomMiddle").innerHTML;
-    const bottomRight = document.getElementById("bottomRight").innerHTML;
+    const bottomLeft = document.getElementById("bottomLeft");
+    const bottomMiddle = document.getElementById("bottomMiddle");
+    const bottomRight = document.getElementById("bottomRight");
     
     if(
         // check the rows for a win
-        (topLeft !== "" && topLeft === topMiddle && topLeft === topRight) ||
-        (middleLeft !== "" && middleLeft === middleMiddle && middleLeft === middleRight) ||
-        (bottomLeft !== "" && bottomLeft === bottomMiddle && bottomLeft === bottomRight) ||
+        (topLeft.innerHTML !== "" && topLeft.innerHTML === topMiddle.innerHTML && topLeft === topRight.innerHTML) ||
+        (middleLeft.innerHTML !== "" && middleLeft.innerHTML === middleMiddle.innerHTML && middleLeft.innerHTML === middleRight.innerHTML) ||
+        (bottomLeft.innerHTML !== "" && bottomLeft.innerHTML === bottomMiddle.innerHTML && bottomLeft.innerHTML === bottomRight.innerHTML) ||
         // check the columns for a win
-        (topLeft !== "" && topLeft === middleLeft && topLeft === bottomLeft) ||
-        (topMiddle !== "" && topMiddle === middleMiddle && topMiddle === bottomMiddle) ||
-        (topRight !== "" && topRight === middleRight && topRight === bottomRight) ||
+        (topLeft.innerHTML !== "" && topLeft.innerHTML === middleLeft.innerHTML && topLeft.innerHTML === bottomLeft.innerHTML) ||
+        (topMiddle.innerHTML !== "" && topMiddle.innerHTML === middleMiddle.innerHTML && topMiddle.innerHTML === bottomMiddle.innerHTML) ||
+        (topRight.innerHTML !== "" && topRight.innerHTML === middleRight.innerHTML && topRight.innerHTML === bottomRight.innerHTML) ||
 
         // check the diagnols for a win
-        (topLeft !== "" && topLeft === middleMiddle && topLeft === bottomRight) ||
-        (topRight !== "" && topRight === middleMiddle && topRight === bottomLeft)
+        (topLeft.innerHTML !== "" && topLeft.innerHTML === middleMiddle.innerHTML && topLeft.innerHTML === bottomRight.innerHTML) ||
+        (topRight.innerHTML !== "" && topRight.innerHTML === middleMiddle.innerHTML && topRight.innerHTML === bottomLeft.innerHTML)
     )
     {
         // disable all of the buttons
