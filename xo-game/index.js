@@ -5,7 +5,7 @@ function whosTurn(btnID)
     // put the X or the O on the square that was clicked
     const button = document.getElementById(btnID);
     button.disabled = true;
-    button.textContent = curPlayer;
+    button.firstChild.textContent = curPlayer;
 
     const par = document.getElementById("turnP");
     if (!didWin()){
@@ -21,8 +21,6 @@ function whosTurn(btnID)
     else{
         par.textContent = curPlayer + " won!";
     }
-
-    button.classList.add("animated")
 }
 
 
@@ -39,37 +37,68 @@ function didWin()
     const bottomLeft = document.getElementById("bottomLeft");
     const bottomMiddle = document.getElementById("bottomMiddle");
     const bottomRight = document.getElementById("bottomRight");
-    
-    if(
-        // check the rows for a win
-        (topLeft.textContent !== "" && topLeft.textContent === topMiddle.textContent && topLeft === topRight.textContent) ||
-        (middleLeft.textContent !== "" && middleLeft.textContent === middleMiddle.textContent && middleLeft.textContent === middleRight.textContent) ||
-        (bottomLeft.textContent !== "" && bottomLeft.textContent === bottomMiddle.textContent && bottomLeft.textContent === bottomRight.textContent) ||
-        // check the columns for a win
-        (topLeft.textContent !== "" && topLeft.textContent === middleLeft.textContent && topLeft.textContent === bottomLeft.textContent) ||
-        (topMiddle.textContent !== "" && topMiddle.textContent === middleMiddle.textContent && topMiddle.textContent === bottomMiddle.textContent) ||
-        (topRight.textContent !== "" && topRight.textContent === middleRight.textContent && topRight.textContent === bottomRight.textContent) ||
 
-        // check the diagnols for a win
-        (topLeft.textContent !== "" && topLeft.textContent === middleMiddle.textContent && topLeft.textContent === bottomRight.textContent) ||
-        (topRight.textContent !== "" && topRight.textContent === middleMiddle.textContent && topRight.textContent === bottomLeft.textContent)
-    )
-    {
-        // disable all of the buttons
-        topLeft.disabled = true;
-        topMiddle.disabled = true;
-        topRight.disabled = true;
-        middleLeft.disabled = true;
-        middleMiddle.disabled = true;
-        middleRight.disabled = true;
-        bottomLeft.disabled = true;
-        bottomMiddle.disabled = true;
-        bottomRight.disabled = true;
+    let won = false;
 
-        return true;
+    // win in the top row
+    if (topLeft.textContent !== "" && topLeft.textContent === topMiddle.textContent && topLeft.textContent === topRight.textContent){
+        topLeft.firstChild.classList.add("animated");
+        topMiddle.firstChild.classList.add("animated");
+        topRight.firstChild.classList.add("animated");
+        won = true;
+    }
+    // win in the middle row
+    if (middleLeft.textContent !== "" && middleLeft.textContent === middleMiddle.textContent && middleLeft.textContent === middleRight.textContent){
+        middleLeft.firstChild.classList.add("animated");
+        middleMiddle.firstChild.classList.add("animated");
+        middleRight.firstChild.classList.add("animated");
+        won = true;
+    }
+    // win in the bottom row
+    if (bottomLeft.textContent !== "" && bottomLeft.textContent === bottomMiddle.textContent && bottomLeft.textContent === bottomRight.textContent){
+        bottomLeft.firstChild.classList.add("animated");
+        bottomMiddle.firstChild.classList.add("animated");
+        bottomRight.firstChild.classList.add("animated");
+        won = true;
+    }
+    // win in the left column
+    if (topLeft.textContent !== "" && topLeft.textContent === middleLeft.textContent && topLeft.textContent === bottomLeft.textContent){
+        topLeft.firstChild.classList.add("animated");
+        middleLeft.firstChild.classList.add("animated");
+        bottomLeft.firstChild.classList.add("animated");
+    }
+    // win in the middle column
+    if (topMiddle.textContent !== "" && topMiddle.textContent === middleMiddle.textContent && topMiddle.textContent === bottomMiddle.textContent){
+        topMiddle.firstChild.classList.add("animated");
+        middleMiddle.firstChild.classList.add("animated");
+        bottomMiddle.firstChild.classList.add("animated");
+        won = true;
+    }
+    // win in the right column
+    if (topRight.textContent !== "" && topRight.textContent === middleRight.textContent && topRight.textContent === bottomRight.textContent){
+        topRight.firstChild.classList.add("animated");
+        middleRight.firstChild.classList.add("animated");
+        bottomRight.firstChild.classList.add("animated");
+        won = true;
+    }
+    // win in the main diagonal
+    if (topLeft.textContent !== "" && topLeft.textContent === middleMiddle.textContent && topLeft.textContent === bottomRight.textContent){
+        topLeft.firstChild.classList.add("animated");
+        middleMiddle.firstChild.classList.add("animated");
+        bottomRight.firstChild.classList.add("animated");
+        won = true;
+    }
+    // win in the cross diagonal
+    if (topRight.textContent !== "" && topRight.textContent === middleMiddle.textContent && topRight.textContent === bottomLeft.textContent){
+        topRight.firstChild.classList.add("animated");
+        middleMiddle.firstChild.classList.add("animated");
+        bottomLeft.firstChild.classList.add("animated");
+        won = true;
     }
 
-    // else
-    return false;
-
+    if(won){
+        // disable all of the buttons
+        document.querySelectorAll(".table button").forEach(btn => btn.disabled=true);
+    }
+    return won;
 }

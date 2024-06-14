@@ -68,7 +68,7 @@ h1 #O {
     scale: 1.02;
 }
 
-.table button.animated{
+.table button div.animated{
     animation: flip 1.5s forwards;
 }
 
