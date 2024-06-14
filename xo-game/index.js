@@ -9,15 +9,23 @@ function whosTurn(btnID)
 
     const par = document.getElementById("turnP");
     if (!didWin()){
-        // change the turns
-        if (curPlayer === 'X') curPlayer = 'O';
-        else curPlayer = 'X';
+        // normal turn
+        if (!isTie()){
+            // change the turns
+            if (curPlayer === 'X') curPlayer = 'O';
+            else curPlayer = 'X';
 
-        // cahnge the paragraph according to who's turn is it
-        par.textContent = "it's " + curPlayer + "'s turn!";   
+            // cahnge the paragraph according to who's turn is it
+            par.textContent = "It's " + curPlayer + "'s turn!";   
+        }
+
+        // it's a tie
+        else{
+            par.textContent = "No one won, it's a tie!";  
+        }
     }
 
-    // if the game is over
+    // if somone won
     else{
         par.textContent = curPlayer + " won!";
     }
@@ -98,7 +106,13 @@ function didWin()
 
     if(won){
         // disable all of the buttons
-        document.querySelectorAll(".table button").forEach(btn => btn.disabled=true);
+        document.querySelectorAll(".table button").forEach(btn => btn.disabled=true)
     }
     return won;
+}
+
+function isTie(){
+    return(topLeft.textContent !== "" && topMiddle.textContent !== "" && topRight.textContent !== "" &&
+        middleLeft.textContent !== "" && middleMiddle.textContent !== "" && middleRight.textContent !== "" &&
+        bottomLeft.textContent !== "" && bottomMiddle.textContent !== "" && bottomRight.textContent !== "");
 }
