@@ -5,7 +5,7 @@ function whosTurn(btnID)
     // put the X or the O on the square that was clicked
     const button = document.getElementById(btnID);
     button.disabled = true;
-    button.innerHTML = curPlayer;
+    button.textContent = curPlayer;
 
     const par = document.getElementById("turnP");
     if (!didWin()){
@@ -14,14 +14,15 @@ function whosTurn(btnID)
         else curPlayer = 'X';
 
         // cahnge the paragraph according to who's turn is it
-        par.innerHTML = "it's " + curPlayer + "'s turn!";   
+        par.textContent = "it's " + curPlayer + "'s turn!";   
     }
 
     // if the game is over
     else{
-        par.innerHTML = curPlayer + " won!";
+        par.textContent = curPlayer + " won!";
     }
 
+    button.classList.add("animated")
 }
 
 
@@ -41,17 +42,17 @@ function didWin()
     
     if(
         // check the rows for a win
-        (topLeft.innerHTML !== "" && topLeft.innerHTML === topMiddle.innerHTML && topLeft === topRight.innerHTML) ||
-        (middleLeft.innerHTML !== "" && middleLeft.innerHTML === middleMiddle.innerHTML && middleLeft.innerHTML === middleRight.innerHTML) ||
-        (bottomLeft.innerHTML !== "" && bottomLeft.innerHTML === bottomMiddle.innerHTML && bottomLeft.innerHTML === bottomRight.innerHTML) ||
+        (topLeft.textContent !== "" && topLeft.textContent === topMiddle.textContent && topLeft === topRight.textContent) ||
+        (middleLeft.textContent !== "" && middleLeft.textContent === middleMiddle.textContent && middleLeft.textContent === middleRight.textContent) ||
+        (bottomLeft.textContent !== "" && bottomLeft.textContent === bottomMiddle.textContent && bottomLeft.textContent === bottomRight.textContent) ||
         // check the columns for a win
-        (topLeft.innerHTML !== "" && topLeft.innerHTML === middleLeft.innerHTML && topLeft.innerHTML === bottomLeft.innerHTML) ||
-        (topMiddle.innerHTML !== "" && topMiddle.innerHTML === middleMiddle.innerHTML && topMiddle.innerHTML === bottomMiddle.innerHTML) ||
-        (topRight.innerHTML !== "" && topRight.innerHTML === middleRight.innerHTML && topRight.innerHTML === bottomRight.innerHTML) ||
+        (topLeft.textContent !== "" && topLeft.textContent === middleLeft.textContent && topLeft.textContent === bottomLeft.textContent) ||
+        (topMiddle.textContent !== "" && topMiddle.textContent === middleMiddle.textContent && topMiddle.textContent === bottomMiddle.textContent) ||
+        (topRight.textContent !== "" && topRight.textContent === middleRight.textContent && topRight.textContent === bottomRight.textContent) ||
 
         // check the diagnols for a win
-        (topLeft.innerHTML !== "" && topLeft.innerHTML === middleMiddle.innerHTML && topLeft.innerHTML === bottomRight.innerHTML) ||
-        (topRight.innerHTML !== "" && topRight.innerHTML === middleMiddle.innerHTML && topRight.innerHTML === bottomLeft.innerHTML)
+        (topLeft.textContent !== "" && topLeft.textContent === middleMiddle.textContent && topLeft.textContent === bottomRight.textContent) ||
+        (topRight.textContent !== "" && topRight.textContent === middleMiddle.textContent && topRight.textContent === bottomLeft.textContent)
     )
     {
         // disable all of the buttons

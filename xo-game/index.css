@@ -68,6 +68,16 @@ h1 #O {
     scale: 1.02;
 }
 
+.table button.animated{
+    animation: flip 1.5s forwards;
+}
+
+@keyframes flip {
+    to{
+        transform: rotateX(360deg);
+    }
+}
+
 #topLeft {
     background-image: -webkit-repeating-linear-gradient(top left, #73003E, #73003E 25%, #8F0078);
 }
