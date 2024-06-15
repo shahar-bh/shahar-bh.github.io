@@ -116,3 +116,12 @@ function isTie(){
         middleLeft.textContent !== "" && middleMiddle.textContent !== "" && middleRight.textContent !== "" &&
         bottomLeft.textContent !== "" && bottomMiddle.textContent !== "" && bottomRight.textContent !== "");
 }
+
+// function replay(){
+//     document.querySelectorAll(".table button").forEach(erase);
+// }
+
+// function erase(btn){
+//     btn.textContent="";
+//     btn.disabled=false;
+// }
