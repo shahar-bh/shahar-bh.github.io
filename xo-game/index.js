@@ -118,13 +118,14 @@ function isTie(){
         bottomLeft.textContent !== "" && bottomMiddle.textContent !== "" && bottomRight.textContent !== "");
 }
 
-function rematch(){
+function rematch() {
     document.querySelectorAll(".table button").forEach(btn => restartButton(btn));
     curPlayer = 'X';
     document.getElementById("turnP").textContent = "It's " + curPlayer + "'s turn!";
 }
 
-function restartButton(btn){
-    btn.textContent = "";
+function restartButton(btn) {
+    btn.firstChild.textContent = "";
     btn.disabled = false;
+    btn.firstChild.classList.remove("animated");
 }
