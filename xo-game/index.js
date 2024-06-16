@@ -107,7 +107,7 @@ function didWin()
 
     if(won){
         // disable all of the buttons
-        document.querySelectorAll(".table button").forEach(btn => btn.disabled=true)
+        document.querySelectorAll(".table button").forEach(btn => btn.disabled=true);
     }
     return won;
 }
@@ -118,11 +118,13 @@ function isTie(){
         bottomLeft.textContent !== "" && bottomMiddle.textContent !== "" && bottomRight.textContent !== "");
 }
 
-// function replay(){
-//     document.querySelectorAll(".table button").forEach(erase);
-// }
+function rematch(){
+    document.querySelectorAll(".table button").forEach(btn => restartButton(btn));
+    curPlayer = 'X';
+    document.getElementById("turnP").textContent = "It's " + curPlayer + "'s turn!";
+}
 
-// function erase(btn){
-//     btn.textContent="";
-//     btn.disabled=false;
-// }
+function restartButton(btn){
+    btn.textContent = "";
+    btn.disabled = false;
+}

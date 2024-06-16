@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-* {
+*{
     box-sizing: border-box;
 
     font-family: "Inter", sans-serif;
@@ -12,7 +12,8 @@ body {
     height: 100dvh;
     width: auto;
     margin: 0;
-    padding-top: 30px;
+    padding: 0;
+    padding-top: 10px;
 
     background-color: #1C1C1C;
 }
@@ -21,7 +22,7 @@ body {
 h1 {
     text-align: center;
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 
     font-size: 50px;
 }
@@ -41,8 +42,8 @@ h1 #O {
 
 .table {
     margin: auto;
-    height: min(calc(100vh - 40px), 375px);
-    width: min(calc(100vh - 40px), 375px);
+    height: min(calc(100dvh - 40px), 375px);
+    width: min(calc(100dvh - 40px), 375px);
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -56,10 +57,7 @@ h1 #O {
     cursor: pointer;
     color: white;
     padding: 0;
-
     font-size: 3em;
-    /* font-family: cursive;
-    font-weight: 200; */
 
     transition: scale 200ms;
 }
@@ -157,5 +155,29 @@ h1 #O {
     color: white;
     font-size: larger;
 
+    margin: auto;
     margin-top: 10px;
+}
+
+#rematch-btn{
+    text-align: center;
+    margin-top: 10px;
+    padding: 0;
+}
+
+#rematch-btn button{
+    height: min(calc(100dvh - 400px), 38px);
+    width: min(calc(100dvw - 250px), 100px);
+
+    text-align: center;
+    color: rgba(255, 255, 255, 80%);
+    border: none;
+    border-radius: 7px;
+
+    cursor: pointer;
+    background-image: -webkit-repeating-radial-gradient(#73003E, #8F0078);
+}
+
+#rematch-btn button:hover{
+    background-image: -webkit-repeating-radial-gradient(#690034, #7B0064);
 }
