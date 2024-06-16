@@ -74,6 +74,7 @@ function didWin()
         topLeft.firstChild.classList.add("animated");
         middleLeft.firstChild.classList.add("animated");
         bottomLeft.firstChild.classList.add("animated");
+        won = true;
     }
     // win in the middle column
     if (topMiddle.textContent !== "" && topMiddle.textContent === middleMiddle.textContent && topMiddle.textContent === bottomMiddle.textContent){
