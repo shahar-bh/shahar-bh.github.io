@@ -17,25 +17,51 @@ body{
     background-color: #F5F5F5;
 }
 
+#input-wrapper{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 750px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
 
 #input-bar{
     background-color: #E1E1E1;
-    color: #3C3C3C;
+    color: #141414;
+    font-size: medium;
+
     outline: none;
     border: none;
     border-radius: 30px;
 
-    width: 750px;
-    height: 40px;
-    padding: 15px;
-    
-    bottom: 20px;
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
+    width: inherit;
+    height: inherit;
+    padding: 0 45px 0 15px;
+
 }
 
 #input-bar::placeholder{
     color: #3C3C3C;
+    font-weight: 500;
+}
+
+#send-button{
+    background: url('send-icon.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    outline: none;
+
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 15px;
+    
+    cursor: pointer;
 }
