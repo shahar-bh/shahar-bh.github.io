@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahar</title>
-    <link rel="stylesheet" href="index.css">
+    <title>For Liya ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Fredoka+One&display=swap" rel="stylesheet"> -->
 </head>
+
 <body>
-    <h1>Welcome to my website!</h1>
-    
-    <h2><a href="/registration-page" id="registration-link">Click here</a> for the registration page.</h2>
-    <h2><a href="/xo-game" id="xo-link">Click here</a> for the X&O game.</h2>
-    <h2><a href="/Ais" id="xo-link">Click here</a> for the Ai's comparison.</h2>
+
+    <div class="bg-hearts">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </div>
+
+    <div class="container">
+
+        <div id="question-screen">
+            <div class="photo-frame">
+                <img src="start-pic.jpg" alt="Cute photo of me" class="main-photo">
+            </div>
+
+            <h1>Liya, will you be my valentine? 🌹</h1>
+            <p class="sub-text">Please say yes! (if you say no Im gonna cry 🙏)</p>
+
+            <div class="button-group">
+                <button id="yes-btn">YES! 😍</button>
+                <button id="no-btn">No 😢</button>
+            </div>
+        </div>
+
+        <div id="success-screen" class="hidden">
+            <h1>Yippeeeeeeeee!!!! ❤️🥳</h1>
+            <div class="photo-frame">
+                <video src="success.mp4" class="success-photo" autoplay loop muted playsinline></video>
+            </div>
+            <p>Thank you so much for being my valentine! I love you and promise to not dissapoint 🌚❤️</p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

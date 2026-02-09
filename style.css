@@ -1,0 +1,209 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* REMOVES MOBILE TAP HIGHLIGHT COLOR */
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    background-color: #ffe6ea;
+    font-family: 'Fredoka One', cursive;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 400px;
+}
+
+h1 {
+    color: #ff4d6d;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0px #fff;
+    font-family: 'Pacifico', cursive;
+    /* font-family: 'Courgette', cursive; */
+}
+
+.sub-text {
+    color: #888;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.photo-frame {
+    margin-bottom: 20px;
+}
+
+.main-photo, .success-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    position: relative;
+    height: 150px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    transition: transform 0.2s;
+    width: 100%;
+    max-width: 200px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    outline: none; /* Removes focus outline */
+}
+
+#yes-btn {
+    background-color: #ff4d6d;
+    color: white;
+}
+
+#yes-btn:active {
+    transform: scale(0.95);
+}
+
+#no-btn {
+    background-color: #fff;
+    color: #ff4d6d;
+    border: 2px solid #ff4d6d;
+    position: relative; 
+    z-index: 100;
+    transition: left 0.3s ease, top 0.3s ease, transform 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/* =========================================
+   UPDATED BACKGROUND HEARTS
+   ========================================= */
+.bg-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.bg-hearts li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: #ff6481;
+    bottom: -150px;
+    opacity: 0.4;
+    
+    /* FASTER ANIMATION SPEED (average 6s to 15s) */
+    animation: animate 10s linear infinite; 
+    
+    /* HEART SHAPE BASE */
+    transform: rotate(45deg); 
+}
+
+/* SMART HEART SHAPE 
+   Using percentages so they scale automatically when we change the li size 
+*/
+.bg-hearts li::before,
+.bg-hearts li::after {
+    content: "";
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+    background: inherit; /* Use the same color as the parent li */
+    border-radius: 50%;
+}
+
+.bg-hearts li::before {
+    top: -50%; /* Moves up exactly half the height */
+    left: 0;
+}
+
+.bg-hearts li::after {
+    top: 0;
+    left: -50%; /* Moves left exactly half the width */
+}
+
+/* RANDOMIZE POSITIONS, SIZES & SPEEDS 
+   Negative animation-delay makes them start "already on screen"
+*/
+
+/* 1. Large heart, left side */
+.bg-hearts li:nth-child(1) { left: 10%; width: 80px; height: 80px; animation-delay: -2s; animation-duration: 12s; }
+
+/* 2. Small, fast */
+.bg-hearts li:nth-child(2) { left: 20%; width: 30px; height: 30px; animation-delay: -5s; animation-duration: 8s; }
+
+/* 3. Medium, center */
+.bg-hearts li:nth-child(3) { left: 35%; width: 50px; height: 50px; animation-delay: -8s; animation-duration: 10s; }
+
+/* 4. Tiny, very fast */
+.bg-hearts li:nth-child(4) { left: 50%; width: 20px; height: 20px; animation-delay: -1s; animation-duration: 6s; }
+
+/* 5. Large, right side */
+.bg-hearts li:nth-child(5) { left: 65%; width: 70px; height: 70px; animation-delay: -4s; animation-duration: 14s; }
+
+/* 6. Medium */
+.bg-hearts li:nth-child(6) { left: 80%; width: 45px; height: 45px; animation-delay: -7s; animation-duration: 9s; }
+
+/* 7. Extra small */
+.bg-hearts li:nth-child(7) { left: 90%; width: 25px; height: 25px; animation-delay: -3s; animation-duration: 7s; }
+
+/* 8. Additional Fillers */
+.bg-hearts li:nth-child(8) { left: 5%; width: 35px; height: 35px; animation-delay: -9s; animation-duration: 11s; }
+.bg-hearts li:nth-child(9) { left: 25%; width: 15px; height: 15px; animation-delay: -6s; animation-duration: 5s; }
+.bg-hearts li:nth-child(10) { left: 55%; width: 60px; height: 60px; animation-delay: -10s; animation-duration: 13s; }
+.bg-hearts li:nth-child(11) { left: 45%; width: 25px; height: 25px; animation-delay: -2s; animation-duration: 8s; }
+.bg-hearts li:nth-child(12) { left: 75%; width: 40px; height: 40px; animation-delay: -5s; animation-duration: 10s; }
+.bg-hearts li:nth-child(13) { left: 15%; width: 20px; height: 20px; animation-delay: -1s; animation-duration: 6s; }
+.bg-hearts li:nth-child(14) { left: 85%; width: 55px; height: 55px; animation-delay: -8s; animation-duration: 12s; }
+.bg-hearts li:nth-child(15) { left: 95%; width: 30px; height: 30px; animation-delay: -3s; animation-duration: 7s; }
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(45deg) scale(0.3);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1; /* Fade in quickly */
+    }
+    100% {
+        transform: translateY(-110vh) rotate(45deg) scale(1); /* Go way off screen */
+        opacity: 0; /* Fade out at very top */
+    }
+}
